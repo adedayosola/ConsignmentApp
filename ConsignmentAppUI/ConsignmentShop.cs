@@ -19,6 +19,8 @@ namespace ConsignmentAppUI
         BindingSource itemBinding = new BindingSource();
         BindingSource cartBinding = new BindingSource();
         BindingSource vendorBinding = new BindingSource();
+        private Decimal storeProfit = 0;
+
 
         public ConsignmentShop()
         {
@@ -97,10 +99,13 @@ namespace ConsignmentAppUI
             {
                 item.Sold = true;
                 item.Owner.PaymentDue += (decimal)item.Owner.Commission * item.Price;
+                storeProfit += (1-(decimal)item.Owner.Commission) * item.Price;
             }
             shoppingCartData.Clear();
 
             itemBinding.DataSource = store.Items.Where(x => x.Sold == false).ToList();
+
+            storeProfitValue.Text = string.Format("CAD${0: 0.00}", storeProfit);
 
             cartBinding.ResetBindings(false);
             itemBinding.ResetBindings(false);

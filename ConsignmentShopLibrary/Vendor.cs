@@ -16,7 +16,7 @@ namespace ConsignmentShopLibrary
         {
             get
             {
-                return string.Format("{0}-{1} - CAD${2}", FirstName, LastName, PaymentDue );
+                return string.Format("{0}-{1} - CAD${2: 0.00}", FirstName, LastName, PaymentDue );
             }
         }
 
