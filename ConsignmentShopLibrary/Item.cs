@@ -19,7 +19,7 @@ namespace ConsignmentShopLibrary
         {
             get
             {
-                return string.Format("{0} - ${1}", Title, Price);
+                return string.Format("{0} - CAD${1}", Title, Price);
             }
         }
     }

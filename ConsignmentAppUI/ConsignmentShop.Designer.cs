@@ -75,6 +75,7 @@ namespace ConsignmentAppUI
             this.addToCart.TabIndex = 3;
             this.addToCart.Text = "ADD TO CART";
             this.addToCart.UseVisualStyleBackColor = true;
+            this.addToCart.Click += new System.EventHandler(this.addToCart_Click);
             // 
             // cartListBox
             // 
@@ -103,12 +104,13 @@ namespace ConsignmentAppUI
             this.makePurchase.TabIndex = 6;
             this.makePurchase.Text = "PURCHASE";
             this.makePurchase.UseVisualStyleBackColor = true;
+            this.makePurchase.Click += new System.EventHandler(this.makePurchase_Click);
             // 
             // ConsignmentShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 563);
+            this.ClientSize = new System.Drawing.Size(870, 469);
             this.Controls.Add(this.makePurchase);
             this.Controls.Add(this.cartListboxLabel);
             this.Controls.Add(this.cartListBox);

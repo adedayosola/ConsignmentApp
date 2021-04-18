@@ -14,7 +14,10 @@ namespace ConsignmentAppUI
     public partial class ConsignmentShop : Form
     {
         private Store store = new Store();
+        private List<Item> shoppingCartData = new List<Item>();
+
         BindingSource itemBinding = new BindingSource();
+        BindingSource cartBinding = new BindingSource();
         public ConsignmentShop()
         {
             InitializeComponent();
@@ -25,6 +28,13 @@ namespace ConsignmentAppUI
 
             itemsListBox.DisplayMember = "Display";
             itemsListBox.ValueMember = "Display";
+
+            cartBinding.DataSource = shoppingCartData;
+            cartListBox.DataSource = cartBinding;
+
+            cartListBox.DisplayMember = "Display";
+            cartListBox.ValueMember = "Display";
+
 
         }
         private void SetupData()
@@ -62,6 +72,24 @@ namespace ConsignmentAppUI
             });
 
             store.Name = "Na name of store be this";
+        }
+
+        private void addToCart_Click(object sender, EventArgs e)
+        {
+            //figure out what is selected from items list
+            //copy that item to the shopping cart
+            //do we take it from inventory
+
+            Item selectedItem = (Item)itemsListBox.SelectedItem;
+            shoppingCartData.Add(selectedItem);
+
+            cartBinding.ResetBindings(false);
+        }
+
+        private void makePurchase_Click(object sender, EventArgs e)
+        {
+            //mark each item as sold
+            //clear the cart
         }
     }
 }
