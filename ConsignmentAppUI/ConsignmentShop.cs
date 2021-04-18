@@ -18,24 +18,27 @@ namespace ConsignmentAppUI
 
         BindingSource itemBinding = new BindingSource();
         BindingSource cartBinding = new BindingSource();
+        BindingSource vendorBinding = new BindingSource();
+
         public ConsignmentShop()
         {
             InitializeComponent();
             SetupData();
 
-            itemBinding.DataSource = store.Items;
+            itemBinding.DataSource = store.Items.Where(x => x.Sold == false).ToList();
             itemsListBox.DataSource = itemBinding;
-
             itemsListBox.DisplayMember = "Display";
             itemsListBox.ValueMember = "Display";
 
             cartBinding.DataSource = shoppingCartData;
             cartListBox.DataSource = cartBinding;
-
             cartListBox.DisplayMember = "Display";
             cartListBox.ValueMember = "Display";
 
-
+            vendorBinding.DataSource = store.Vendors;
+            vendorListBox.DataSource = vendorBinding;
+            vendorListBox.DisplayMember = "Display";
+            vendorListBox.ValueMember = "Display";
         }
         private void SetupData()
         {
@@ -90,6 +93,18 @@ namespace ConsignmentAppUI
         {
             //mark each item as sold
             //clear the cart
+            foreach (Item item in shoppingCartData)
+            {
+                item.Sold = true;
+                item.Owner.PaymentDue += (decimal)item.Owner.Commission * item.Price;
+            }
+            shoppingCartData.Clear();
+
+            itemBinding.DataSource = store.Items.Where(x => x.Sold == false).ToList();
+
+            cartBinding.ResetBindings(false);
+            itemBinding.ResetBindings(false);
+            vendorBinding.ResetBindings(false);
         }
     }
 }

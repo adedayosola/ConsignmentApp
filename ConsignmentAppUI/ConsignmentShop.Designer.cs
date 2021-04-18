@@ -36,6 +36,9 @@ namespace ConsignmentAppUI
             this.cartListBox = new System.Windows.Forms.ListBox();
             this.cartListboxLabel = new System.Windows.Forms.Label();
             this.makePurchase = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.vendorListboxLabel = new System.Windows.Forms.Label();
+            this.vendorListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // headerText
@@ -52,9 +55,9 @@ namespace ConsignmentAppUI
             // 
             this.itemsListBox.FormattingEnabled = true;
             this.itemsListBox.ItemHeight = 20;
-            this.itemsListBox.Location = new System.Drawing.Point(35, 135);
+            this.itemsListBox.Location = new System.Drawing.Point(33, 118);
             this.itemsListBox.Name = "itemsListBox";
-            this.itemsListBox.Size = new System.Drawing.Size(297, 224);
+            this.itemsListBox.Size = new System.Drawing.Size(297, 124);
             this.itemsListBox.TabIndex = 1;
             // 
             // itemsListboxLabel
@@ -69,7 +72,7 @@ namespace ConsignmentAppUI
             // 
             // addToCart
             // 
-            this.addToCart.Location = new System.Drawing.Point(362, 218);
+            this.addToCart.Location = new System.Drawing.Point(190, 248);
             this.addToCart.Name = "addToCart";
             this.addToCart.Size = new System.Drawing.Size(140, 34);
             this.addToCart.TabIndex = 3;
@@ -81,16 +84,16 @@ namespace ConsignmentAppUI
             // 
             this.cartListBox.FormattingEnabled = true;
             this.cartListBox.ItemHeight = 20;
-            this.cartListBox.Location = new System.Drawing.Point(531, 135);
+            this.cartListBox.Location = new System.Drawing.Point(407, 118);
             this.cartListBox.Name = "cartListBox";
-            this.cartListBox.Size = new System.Drawing.Size(297, 224);
+            this.cartListBox.Size = new System.Drawing.Size(297, 124);
             this.cartListBox.TabIndex = 4;
             // 
             // cartListboxLabel
             // 
             this.cartListboxLabel.AutoSize = true;
             this.cartListboxLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cartListboxLabel.Location = new System.Drawing.Point(527, 92);
+            this.cartListboxLabel.Location = new System.Drawing.Point(405, 92);
             this.cartListboxLabel.Name = "cartListboxLabel";
             this.cartListboxLabel.Size = new System.Drawing.Size(108, 20);
             this.cartListboxLabel.TabIndex = 5;
@@ -98,7 +101,7 @@ namespace ConsignmentAppUI
             // 
             // makePurchase
             // 
-            this.makePurchase.Location = new System.Drawing.Point(688, 378);
+            this.makePurchase.Location = new System.Drawing.Point(564, 248);
             this.makePurchase.Name = "makePurchase";
             this.makePurchase.Size = new System.Drawing.Size(140, 34);
             this.makePurchase.TabIndex = 6;
@@ -106,11 +109,42 @@ namespace ConsignmentAppUI
             this.makePurchase.UseVisualStyleBackColor = true;
             this.makePurchase.Click += new System.EventHandler(this.makePurchase_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(190, 490);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 34);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "ADD TO CART";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // vendorListboxLabel
+            // 
+            this.vendorListboxLabel.AutoSize = true;
+            this.vendorListboxLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vendorListboxLabel.Location = new System.Drawing.Point(31, 334);
+            this.vendorListboxLabel.Name = "vendorListboxLabel";
+            this.vendorListboxLabel.Size = new System.Drawing.Size(63, 20);
+            this.vendorListboxLabel.TabIndex = 8;
+            this.vendorListboxLabel.Text = "Vendor ";
+            // 
+            // vendorListBox
+            // 
+            this.vendorListBox.FormattingEnabled = true;
+            this.vendorListBox.ItemHeight = 20;
+            this.vendorListBox.Location = new System.Drawing.Point(33, 360);
+            this.vendorListBox.Name = "vendorListBox";
+            this.vendorListBox.Size = new System.Drawing.Size(297, 124);
+            this.vendorListBox.TabIndex = 7;
+            // 
             // ConsignmentShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 469);
+            this.ClientSize = new System.Drawing.Size(753, 584);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.vendorListboxLabel);
+            this.Controls.Add(this.vendorListBox);
             this.Controls.Add(this.makePurchase);
             this.Controls.Add(this.cartListboxLabel);
             this.Controls.Add(this.cartListBox);
@@ -135,6 +169,9 @@ namespace ConsignmentAppUI
         private System.Windows.Forms.ListBox cartListBox;
         private System.Windows.Forms.Label cartListboxLabel;
         private System.Windows.Forms.Button makePurchase;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label vendorListboxLabel;
+        private System.Windows.Forms.ListBox vendorListBox;
     }
 }
 
